@@ -1,9 +1,4 @@
-const ringService = require("./modules/ring/ring.service");
-const { ringQuery, ringMutation } = require("./modules/ring/ring.resolver");
-
-const SCHEMA_NAMES = {
-  ring: "Ring",
-};
+const { ringQuery, ringMutation } = require('./modules/ring/ring.resolver');
 
 const resolvers = {
   Query: {

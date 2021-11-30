@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const { DB_COLLECTION_NAMES } = require("../../config/colections-names");
+const { DB_COLLECTION_NAMES } = require('../../config/colections-names');
 
 const { RING } = DB_COLLECTION_NAMES;
 

@@ -1,26 +1,24 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
-
-# Controls when the workflow will run
 on:
-  pull_request:
-    branches:
-      - "**"
   push:
-    branches:
-      - master
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches: [master, development]
+  pull_request:
+    branches: [master, development]
+  workflow_dispatch:
 jobs:
-  # Steps represent a sequence of tasks that will be executed as part of the job
-  steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Install
-      run: yarn
-    - name: Build
-      run: yarn build
-      env:
-        CI: true
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: "14.15.4"
+      - run: npm install
+      - name: The eslint checking
+        run: npm run lint:fix
+        env:
+          CI: true

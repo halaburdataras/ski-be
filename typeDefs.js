@@ -1,5 +1,5 @@
-const { gql } = require("apollo-server-express");
-const { ringType, ringInput } = require("./modules/ring/ring.graphql");
+const { gql } = require('apollo-server-express');
+const { ringType, ringInput } = require('./modules/ring/ring.graphql');
 
 const typeDefs = gql`
   ${ringType}

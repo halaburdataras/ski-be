@@ -1,10 +1,10 @@
-const Ring = require("./ring.model");
+const Ring = require('./ring.model');
 
 class RingService {
   async getAllRings(limit) {
     const items = await Ring.find().limit(limit).exec();
 
-    if (items.length === 0) throw new Error("Ring not found!", 404);
+    if (items.length === 0) throw new Error('Ring not found!', 404);
 
     const count = await Ring.countDocuments().exec();
 
@@ -17,7 +17,7 @@ class RingService {
   async getRingById(id) {
     const foundRing = await Ring.findById(id).exec();
 
-    if (!foundRing) throw new Error("Ring not found!", 404);
+    if (!foundRing) throw new Error('Ring not found!', 404);
 
     return foundRing;
   }

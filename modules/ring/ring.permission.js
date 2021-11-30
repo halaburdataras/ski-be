@@ -1,4 +1,5 @@
-const { allow } = require("graphql-shield");
+const { allow } = require('graphql-shield');
+
 const ringPermissionsQuery = {
   getAllRings: allow,
   getRingById: allow,

@@ -1,4 +1,4 @@
-const ringService = require("./ring.service");
+const ringService = require('./ring.service');
 
 const ringQuery = {
   getAllRings: async (_, { limit }) => ringService.getAllRings(limit),
@@ -6,9 +6,7 @@ const ringQuery = {
 };
 
 const ringMutation = {
-  addRing: async (_, { ring }) => {
-    return ringService.addRing(ring);
-  },
+  addRing: async (_, { ring }) => ringService.addRing(ring),
 };
 
 module.exports = { ringQuery, ringMutation };

@@ -1,8 +1,8 @@
-const { shield } = require("graphql-shield");
+const { shield } = require('graphql-shield');
 const {
   ringPermissionsQuery,
   ringPermissionsMutation,
-} = require("./modules/ring/ring.permission");
+} = require('./modules/ring/ring.permission');
 
 const permissions = shield(
   {
