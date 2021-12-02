@@ -4,6 +4,10 @@ const {
   checkoutPermissionsMutation,
 } = require('./modules/checkout/checkout.permission');
 const {
+  promotionPermissionsQuery,
+  promotionPermissionsMutation,
+} = require('./modules/promotion/promotion.permission');
+const {
   ringPermissionsQuery,
   ringPermissionsMutation,
 } = require('./modules/ring/ring.permission');
@@ -13,10 +17,12 @@ const permissions = shield(
     Query: {
       ...ringPermissionsQuery,
       ...checkoutPermissionsQuery,
+      ...promotionPermissionsQuery,
     },
     Mutation: {
       ...ringPermissionsMutation,
       ...checkoutPermissionsMutation,
+      ...promotionPermissionsMutation,
     },
   },
   {

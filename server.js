@@ -2,7 +2,6 @@ const { ApolloServer, makeExecutableSchema } = require('apollo-server-express');
 const express = require('express');
 const { applyMiddleware } = require('graphql-middleware');
 const cors = require('cors');
-const config = require('config');
 
 const connectDB = require('./config/db');
 const typeDefs = require('./typeDefs');
@@ -38,7 +37,7 @@ server.applyMiddleware({
   },
 });
 
-app.listen(process.env.PORT || 3000, () =>
+app.listen(process.env.PORT || 5000, () =>
   console.info(
     `Apollo server started, port ${process.env.PORT}, Graphql path: ${server.graphqlPath}`
   )
