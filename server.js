@@ -19,14 +19,7 @@ const schema = applyMiddleware(
 );
 
 const app = express();
-app.use(
-  cors({
-    origin: [
-      'http://localhost:3000',
-      'https://jewelry-fe-git-dev-halaburdataras.vercel.app/',
-    ],
-  })
-);
+app.options('*', cors());
 app.disable('x-powered-by');
 
 const server = new ApolloServer({
