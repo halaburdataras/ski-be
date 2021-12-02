@@ -13,8 +13,6 @@ const permissions = require('./permissions');
   await connectDB();
 })();
 
-const PORT = config.get('port') || 5000;
-
 const schema = applyMiddleware(
   makeExecutableSchema({ typeDefs, resolvers }),
   permissions
@@ -47,8 +45,8 @@ server.applyMiddleware({
   },
 });
 
-app.listen(PORT, () =>
+app.listen(process.env.PORT || 3000, () =>
   console.info(
-    `Apollo server started, port ${PORT}, Graphql path: ${server.graphqlPath}`
+    `Apollo server started, port ${process.env.PORT}, Graphql path: ${server.graphqlPath}`
   )
 );
