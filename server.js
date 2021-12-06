@@ -17,10 +17,6 @@ const schema = applyMiddleware(
   permissions
 );
 
-const app = express();
-app.options('*', cors());
-app.disable('x-powered-by');
-
 const server = new ApolloServer({
   schema,
   formatError: (err) => {
@@ -29,6 +25,9 @@ const server = new ApolloServer({
   introspection: true,
   cors: { origin: '*' },
 });
+
+const app = express();
+app.options('*', cors());
 
 server.applyMiddleware({
   app,

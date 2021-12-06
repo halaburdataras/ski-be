@@ -1,7 +1,5 @@
 const DB_COLLECTION_NAMES = {
-  RING: 'ring',
-  CHECKOUT: 'checkout',
-  PROMOTION: 'promotion',
+  STUFF: 'stuff',
 };
 
 module.exports = { DB_COLLECTION_NAMES };
